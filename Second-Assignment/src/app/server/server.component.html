@@ -1,0 +1,27 @@
+<h3>Server Component</h3>
+<h4>String Interpolation</h4>
+<p>{{'Server'}} with ID {{serverID}} is {{getServerName()}}</p>
+
+<h4>Property Binding</h4>
+<button [disabled]="!allowNewServer">Add Server</button>
+<p>{{allowNewServer}}</p>
+
+<h4>Event Binding</h4>
+<button (click)="onCreateServer()">Click Server</button>
+<p>{{serverCreationStatus}}</p>
+<input type="text" (input)="onUpdate($event)">
+<p>{{serverName}}</p>
+
+<h4>Two-way Binding</h4>
+<input type="text"
+[(ngModel)]="serverName">
+
+<h4>1-Add a input feild which updates a property("username") via 2-way binding</h4>
+<h4>2-Add a button which only be click if username is not empty and on clicking it reset.</h4>
+Username : <input type="text"
+[(ngModel)]="username">
+
+<p>Username : {{username}}</p>
+<button [disabled]="username === ''" 
+(click)="onClick()">Reset Username</button>
+<!--or just (click)="username=''"-->
