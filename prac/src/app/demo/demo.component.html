@@ -1,0 +1,37 @@
+<h3>Demo Component</h3>
+<p>Services</p>
+
+<ul *ngFor="let emp of employees">
+    <li>{{emp.name}}</li>
+</ul>
+
+<p>Component Interaction</p>
+<p>{{"Hello "+data}}</p>
+<button (click)="fireEvent()">Send Event</button>
+<p [id]="myId">{{"Welcome "+name}} - String Interpolation</p>
+<input type="text" value="Kuldeep" [disabled]="isDisabled"> - Property Binding
+<p [class.isSuccess]="isFailed">Namaste India - Class Binding</p>
+<p [ngClass]="messg">Welcome to Zeiss - Class Binding</p>
+<p [style.color]="'brown'">Welcome to Goa, Singham!! - Style Binding</p>
+<p [style.color]="isGood?'green':'red'">How u doinng! - Style Binding</p>
+<p [ngStyle]="uKnow">I know!! - Style binding</p>
+<p>Event Binding</p>
+<button (click)="onClick()">Gunther's Last Name</button>
+{{place}}
+<br><br>
+<button (click)="onLog($event)">$event</button>
+{{ok}}
+<br><br>
+<button (click)="greeting='Welcoming the King'">Greet Me..</button>
+{{greeting}}
+<p>Template Reference Variable</p>
+<input type="text" #myInput>
+<button (click)="mssg=myInput.value">Print</button>
+{{mssg}}
+<p>Two Way Binding</p>
+<input type="text" [(ngModel)]="printName">
+{{printName}}
+<p>Structural Directives</p>
+<div *ngFor="let color of colors; index as i">
+    <p>{{i+1}}. {{color}}</p>
+</div>
